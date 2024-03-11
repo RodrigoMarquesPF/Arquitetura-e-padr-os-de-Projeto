@@ -1,1 +1,1 @@
-# Arquitetura-e-padr-os-de-Projeto
+# Arquitetura-e-padroes-de-Projeto
