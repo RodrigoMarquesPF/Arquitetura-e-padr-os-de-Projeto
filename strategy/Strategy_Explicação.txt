@@ -1,0 +1,40 @@
+Nesse caso de eu querer criar uma nova estartegia, estrategia de defesa por exemplo.
+Seria criado uma interface de DefenseStrategy para as estratégias  de defesa:
+
+public interface DefenseStrategy {
+    String defend();
+}
+
+
+eu teria que implementar as novas estratégias de defesa como defesaForte e defesaFraca por exemplo:
+
+public class DefesaForte implements DefenseStrategy {
+
+	@Override
+	public String defend() {
+		
+		return "Defender todas as posições";
+	}
+
+}
+
+eu também teria que atualizar a minha classe UnidadesMilitarespara incluir a nova interface, e atualizar cada unidade militar para 
+incluir a nova estratégia.
+
+classe Infantaria como exemplo:
+public class Infantaria extends UnidadesMilitares {
+
+    public Infantaria(AttackStrategy attackStrategy, DefenseStrategy defenseStrategy) {
+        super(attackStrategy, defenseStrategy);
+    }
+}
+
+
+e depois o usuário poderia usar a estratégia:
+DefesaForte defesaForte = new DefesaForte();
+
+
+
+infantaria.setDefenseStrategy(defesaForte);
+
+infantaria.executandoDefense();
